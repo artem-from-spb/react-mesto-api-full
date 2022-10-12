@@ -61,21 +61,6 @@ class Api {
     }).then(this._checkResponse);
   }
 
-  ///8. Постановка и снятие лайка
-  // setLike(cardId) {
-  //   return fetch(`${this._url}cards/${cardId}/likes`, {
-  //     method: "PUT",
-  //     headers: this._headers,
-  //   }).then(this._checkResponse);
-  // }
-
-  // removeLike(cardId) {
-  //   return fetch(`${this._url}cards/${cardId}/likes`, {
-  //     method: "DELETE",
-  //     headers: this._headers,
-  //   }).then(this._checkResponse);
-  // }
-
   changeLikeCardStatus(cardId, isLiked) {
     if (isLiked) {
       return fetch(`${this._url}cards/${cardId}/likes`, {
@@ -103,9 +88,9 @@ class Api {
 }
 
 export const api = new Api({
-  url: "https://mesto.nomoreparties.co/v1/cohort-41/",
+  url: "http://51.250.67.85:3000/",
   headers: {
-    authorization: "d9187298-bc53-4629-9e17-1bb6bde52016",
+    authorization: "some-secret-key",
     "content-type": "application/json",
   },
 });
