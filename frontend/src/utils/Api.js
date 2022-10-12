@@ -90,7 +90,7 @@ class Api {
 export const api = new Api({
   url: "http://51.250.67.85:3000/",
   headers: {
-    authorization: "some-secret-key",
+    authorization: "Bearer some-secret-key",
     "content-type": "application/json",
   },
 });
