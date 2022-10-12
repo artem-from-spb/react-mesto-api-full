@@ -1,4 +1,4 @@
-export const BASE_URL = " http://51.250.67.85:3000/";
+export const BASE_URL = " https://auth.nomoreparties.co";
 
 export function checkResponse(res) {
   if (res.ok) {
