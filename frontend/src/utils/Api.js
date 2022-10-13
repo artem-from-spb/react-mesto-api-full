@@ -103,9 +103,9 @@ class Api {
 }
 
 export const api = new Api({
-  url: "https://mesto.nomoreparties.co/v1/cohort-41/",
+  url: "https://artem-mesto.nomoredomains.icu/",
   headers: {
-    authorization: "d9187298-bc53-4629-9e17-1bb6bde52016",
+    authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4MDk2MzMyM2UxOGM0N2M2ZmJkMjIiLCJpYXQiOjE2NjU2NjU0MjQsImV4cCI6MTY2NjI3MDIyNH0.OtGo9jRelZ_ESBYLrQs7rDzVnkmuucs4sK01mK3fz0I",
     "content-type": "application/json",
   },
 });
