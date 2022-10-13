@@ -11,7 +11,7 @@ const defaultErrorHandler = require('./middlewares/defaultErrorHandler');
 
 require('dotenv').config();
 
-const { PORT = 3000 } = process.env;
+const { PORT } = process.env;
 
 const app = express();
 
