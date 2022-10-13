@@ -1,4 +1,4 @@
-export const BASE_URL = "https://artem-mesto.nomoredomains.icu";
+export const BASE_URL = "https://api.artem-mesto.nomoredomains.icu";
 
 export function checkResponse(res) {
   if (res.ok) {
