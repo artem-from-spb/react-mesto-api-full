@@ -105,7 +105,7 @@ class Api {
 export const api = new Api({
   url: "https://artem-mesto.nomoredomains.icu/",
   headers: {
-    authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4MDk2MzMyM2UxOGM0N2M2ZmJkMjIiLCJpYXQiOjE2NjU2NjU0MjQsImV4cCI6MTY2NjI3MDIyNH0.OtGo9jRelZ_ESBYLrQs7rDzVnkmuucs4sK01mK3fz0I",
+    authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4MjcwYWNmYjA1YmY0NmNmZWI4OTciLCJpYXQiOjE2NjU2NzI5ODksImV4cCI6MTY2NjI3Nzc4OX0.g6nMDbXOZuUSfrizmMDnNFYKwCpvg89dkmQbBOh3tWc",
     "content-type": "application/json",
   },
 });
