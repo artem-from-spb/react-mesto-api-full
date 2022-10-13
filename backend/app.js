@@ -21,7 +21,7 @@ app.use(cookieParser());
 
 // Mongoose 6 always behaves as if useNewUrlParser
 // and useCreateIndex are true, and useFindAndModify is false.
-mongoose.connect('mongodb://mongodb://127.0.0.1/mestodb');
+mongoose.connect('mongodb://localhost:27017/mestodb');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
