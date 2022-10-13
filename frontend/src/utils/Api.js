@@ -103,9 +103,9 @@ class Api {
 }
 
 export const api = new Api({
-  url: "https://artem-mesto.nomoredomains.icu/",
+  url: "https://api.artem-mesto.nomoredomains.icu",
   headers: {
-    authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4MjcwYWNmYjA1YmY0NmNmZWI4OTciLCJpYXQiOjE2NjU2NzI5ODksImV4cCI6MTY2NjI3Nzc4OX0.g6nMDbXOZuUSfrizmMDnNFYKwCpvg89dkmQbBOh3tWc",
+    authorization: "Bearer ${localStorage.getItem('token')}",
     "content-type": "application/json",
   },
 });
