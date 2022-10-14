@@ -1,4 +1,4 @@
-export const BASE_URL = "https://api.artem-mesto.nomoredomains.icu";
+export const BASE_URL = "http://localhost:3000";
 
 export function checkResponse(res) {
   if (res.ok) {
@@ -34,9 +34,8 @@ export function checkData(token) {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {
-      Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      authorization: `Bearer ${token}`,
     },
   }).then(checkResponse);
 }

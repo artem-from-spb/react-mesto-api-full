@@ -61,21 +61,6 @@ class Api {
     }).then(this._checkResponse);
   }
 
-  ///8. Постановка и снятие лайка
-  // setLike(cardId) {
-  //   return fetch(`${this._url}cards/${cardId}/likes`, {
-  //     method: "PUT",
-  //     headers: this._headers,
-  //   }).then(this._checkResponse);
-  // }
-
-  // removeLike(cardId) {
-  //   return fetch(`${this._url}cards/${cardId}/likes`, {
-  //     method: "DELETE",
-  //     headers: this._headers,
-  //   }).then(this._checkResponse);
-  // }
-
   changeLikeCardStatus(cardId, isLiked) {
     if (isLiked) {
       return fetch(`${this._url}cards/${cardId}/likes`, {
@@ -103,9 +88,9 @@ class Api {
 }
 
 export const api = new Api({
-  url: "https://api.artem-mesto.nomoredomains.icu/",
+  url: "http://localhost:3000/",
   headers: {
-    authorization: "Bearer ${localStorage.getItem('token')}",
+    authorization: `Bearer ${localStorage.getItem('jwt')}`,
     "content-type": "application/json",
   },
 });
