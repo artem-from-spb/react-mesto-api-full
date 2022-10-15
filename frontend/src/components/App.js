@@ -219,13 +219,12 @@ function App() {
             onCardLike={handleCardLike}
             onCardDelete={handleCardDelete}
             cards={cards}
-            exact
-            path="/"
+            exact path="/"
             component={Main}
             loggedIn={loggedIn}
           />
 
-          <Route>
+          <Route path="*">
             {loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}
           </Route>
         </Switch>
