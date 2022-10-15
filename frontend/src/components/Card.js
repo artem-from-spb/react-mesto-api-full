@@ -36,7 +36,7 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
       <img
         src={bin}
         alt="Корзина"
-        className="card__recycle-bin"
+        className={cardDeleteButtonClassName}
         id="bin"
         onClick={handleDeleteClick}
       />
