@@ -50,7 +50,7 @@ function App() {
           if (res) {
             setEmail(res.email);
             setLoggedIn(true);
-
+            setCurrentUser(res)
             history.push("/");
           }
         })
