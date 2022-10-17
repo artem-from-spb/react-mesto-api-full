@@ -24,8 +24,6 @@ function App() {
   //////////////////////////////////////////////////////////////////////////////////////////
   const history = useHistory();
 
- // const navigate = useNavigate();
-
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
