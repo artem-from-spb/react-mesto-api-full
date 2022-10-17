@@ -42,13 +42,13 @@ function App() {
   const [email, setEmail] = useState("");
 
   function checkToken() {
-    const token = localStorage.getItem("jwt");
+    let token = localStorage.getItem("jwt");
 
     if (token) {
       Auth.checkData(token)
         .then((res) => {
           if (res) {
-            setEmail(res.email);
+     //       setEmail(res.email);
             setLoggedIn(true);
             setCurrentUser(res)
             history.push("/");
