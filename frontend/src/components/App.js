@@ -45,9 +45,9 @@ function App() {
 
   function checkToken() {
     const token = localStorage.getItem("jwt");
-    consol.log(`chTokenbrforeIf ${token}`);
+    console.log(`chTokenbrforeIf ${token}`);
     if (token) {
-      consol.log(`chTokenAgterIf ${token}`);
+      console.log(`chTokenAgterIf ${token}`);
       Auth.checkData(token)
         .then((res) => {
           console.log(`Auth.checkData ${res}`);
