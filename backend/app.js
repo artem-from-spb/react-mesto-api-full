@@ -1,15 +1,15 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const routes = require('./routes/index');
 const defaultErrorHandler = require('./middlewares/defaultErrorHandler');
-
-require('dotenv').config();
 
 const { PORT = 3000 } = process.env;
 
@@ -17,7 +17,7 @@ const app = express();
 
 app.use(cors());
 
-app.use(cookieParser());
+// app.use(cookieParser());
 
 // Mongoose 6 always behaves as if useNewUrlParser
 // and useCreateIndex are true, and useFindAndModify is false.
