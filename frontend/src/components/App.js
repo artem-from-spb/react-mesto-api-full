@@ -45,7 +45,6 @@ function App() {
 
   function checkToken() {
     const token = localStorage.getItem("jwt");
-
     if (token) {
       Auth.checkData(token)
         .then((res) => {
@@ -62,7 +61,6 @@ function App() {
 
 
   useEffect(() => {
-
     if (loggedIn) {
       history.push("/");
       Promise.all([api.getUserInfo(), api.getInitialCards()])
@@ -74,12 +72,12 @@ function App() {
           console.log(err);
         });
     }
-  }, [loggedIn]);
+  }, [loggedIn, history]);
 
   
   useEffect(() => {
     checkToken();
-  }, []);
+  }, [history]);
 
 
   function handleEditAvatarClick() {
