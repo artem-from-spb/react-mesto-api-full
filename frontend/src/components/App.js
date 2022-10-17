@@ -198,7 +198,6 @@ function App() {
 
   function handleLogOut() {
     setLoggedIn(false);
-    console.log(`handleLogOut ${jwt}`);
     localStorage.removeItem("jwt");
   }
 
