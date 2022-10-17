@@ -176,6 +176,7 @@ function App() {
           localStorage.setItem("jwt", res.token);
           checkToken();
           history.push("/");
+          setCurrentUser(res);
         }
       })
       .catch(() => {
