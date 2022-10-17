@@ -172,9 +172,9 @@ function App() {
     Auth.authorize(email, password)
       .then((res) => {
         if (res.token) {
-          setLoggedIn(true);
+       //   setLoggedIn(true);
           localStorage.setItem("jwt", res.token);
-          checkToken();
+       //  checkToken();
           history.push("/");
         }
       })
@@ -188,7 +188,6 @@ function App() {
   function handleLogOut() {
     setLoggedIn(false);
     localStorage.removeItem("jwt");
-    setCurrentUser({});
   }
 
   return (
