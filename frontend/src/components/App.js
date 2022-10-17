@@ -42,7 +42,7 @@ function App() {
   const [email, setEmail] = useState("");
 
   function checkToken() {
-    let token = localStorage.getItem("jwt");
+    const token = localStorage.getItem("jwt");
 
     if (token) {
       Auth.checkData(token)
@@ -50,8 +50,8 @@ function App() {
           if (res) {
             setEmail(res.email);
             setLoggedIn(true);
+
             history.push("/");
-            setCurrentUser(res);
           }
         })
         .catch((err) => alert(err));
@@ -188,8 +188,6 @@ function App() {
   function handleLogOut() {
     setLoggedIn(false);
     localStorage.removeItem("jwt");
-    history.push('/sign-in');
-    setEmail("");
   }
 
   return (

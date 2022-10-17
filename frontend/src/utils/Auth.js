@@ -39,4 +39,3 @@ export function checkData(token) {
     },
   }).then(checkResponse);
 }
-
