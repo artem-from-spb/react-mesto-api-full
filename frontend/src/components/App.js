@@ -50,7 +50,7 @@ function App() {
       consol.log(`chTokenAgterIf ${token}`);
       Auth.checkData(token)
         .then((res) => {
-          consol.log(`Auth.checkData ${res}`);
+          console.log(`Auth.checkData ${res}`);
           if (res) {
             setEmail(res.email);
             setLoggedIn(true);
