@@ -48,9 +48,8 @@ function App() {
       Auth.checkData(token)
         .then((res) => {
           if (res) {
-     //       setEmail(res.email);
+            setEmail(res.email);
             setLoggedIn(true);
-            setCurrentUser(res)
             history.push("/");
           }
         })
@@ -176,7 +175,7 @@ function App() {
           localStorage.setItem("jwt", res.token);
           checkToken();
           history.push("/");
-          setCurrentUser(res);
+    //      setCurrentUser(res);
         }
       })
       .catch(() => {
@@ -190,7 +189,7 @@ function App() {
     setLoggedIn(false);
     localStorage.removeItem("jwt");
     history.push('/sign-in');
-    setCurrentUser({});
+    setEmail({});
   }
 
   return (
