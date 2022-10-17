@@ -41,6 +41,11 @@ function App() {
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
 
+  
+  useEffect(() => {
+    checkToken();
+  }, []);
+
   function checkToken() {
     const token = localStorage.getItem("jwt");
 
@@ -58,9 +63,6 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    checkToken();
-  }, []);
 
   useEffect(() => {
     if (loggedIn) {
