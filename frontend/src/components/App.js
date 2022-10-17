@@ -1,4 +1,4 @@
-import { useState, useEffect, useNavigate } from "react";
+import { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import ImagePopup from "./ImagePopup";
@@ -23,6 +23,8 @@ import error from "../images/Unionred.png";
 function App() {
   //////////////////////////////////////////////////////////////////////////////////////////
   const history = useHistory();
+
+  const navigate = useNavigate();
 
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
@@ -60,7 +62,7 @@ function App() {
 
 
   useEffect(() => {
-    const navigate = useNavigate();
+
     if (loggedIn) {
       navigate("/");
       Promise.all([api.getUserInfo(), api.getInitialCards()])
