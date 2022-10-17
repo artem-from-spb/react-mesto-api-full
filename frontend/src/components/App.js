@@ -189,7 +189,7 @@ function App() {
     setLoggedIn(false);
     localStorage.removeItem("jwt");
     history.push('/sign-in');
-    setEmail({});
+    setEmail("");
   }
 
   return (
