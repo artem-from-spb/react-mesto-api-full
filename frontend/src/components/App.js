@@ -51,6 +51,7 @@ function App() {
             setEmail(res.email);
             setLoggedIn(true);
             history.push("/");
+            setCurrentUser(res);
           }
         })
         .catch((err) => alert(err));
@@ -175,7 +176,6 @@ function App() {
           localStorage.setItem("jwt", res.token);
           checkToken();
           history.push("/");
-    //      setCurrentUser(res);
         }
       })
       .catch(() => {
