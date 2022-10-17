@@ -13,7 +13,7 @@ function Login(props) {
   }
 
   function handleSubmit(e) {
-   // e.preventDefault();
+    e.preventDefault();
 
     props.onLogin({ email, password });
     setEmail("");
