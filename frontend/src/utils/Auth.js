@@ -39,3 +39,12 @@ export function checkData(token) {
     },
   }).then(checkResponse);
 }
+
+export function logOut() {
+   return fetch(`${BASE_URL}/signout`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    }
+   }).then(checkResponse)
+}

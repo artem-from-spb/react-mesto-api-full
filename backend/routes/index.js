@@ -26,6 +26,10 @@ router.post('/signup', celebrate({
 
 router.use(auth);
 
+router.post('/signout', (req, res) => {
+  res.send({ message: 'Signout is OK' });
+});
+
 router.use('/users', routerUsers);
 router.use('/cards', routerCards);
 

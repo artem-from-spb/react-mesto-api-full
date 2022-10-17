@@ -186,8 +186,13 @@ function App() {
   }
 
   function handleLogOut() {
-    setLoggedIn(false);
-    localStorage.removeItem("jwt");
+    Auth.logOut()
+      .then(() => {
+        setLoggedIn(false);
+        localStorage.removeItem("jwt");
+      })
+      .catch((err) => alert(err));
+
   }
 
   return (
