@@ -44,5 +44,10 @@ export function checkData(token) {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  }).then(checkResponse);
+  }).then(checkResponse)
+  .then((res) => {
+    if (res.email){
+      return res;
+    }
+  });
 }

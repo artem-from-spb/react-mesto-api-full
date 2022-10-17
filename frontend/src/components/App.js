@@ -63,7 +63,7 @@ function App() {
 
   useEffect(() => {
     if (loggedIn) {
-      history.push("/");
+      api.updateToken();
       Promise.all([api.getUserInfo(), api.getInitialCards()])
         .then(([userData, cardsData]) => {
           console.log(`promiseAll ${userData}`);

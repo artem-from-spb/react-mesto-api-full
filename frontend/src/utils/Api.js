@@ -85,6 +85,13 @@ class Api {
       }),
     }).then(this._checkResponse);
   }
+
+  updateToken() {
+    this._headers = {
+      'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+      'Content-Type': 'application/json',
+    }
+  }
 }
 
 export const api = new Api({
