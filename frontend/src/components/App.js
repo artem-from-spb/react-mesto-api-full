@@ -45,9 +45,12 @@ function App() {
 
   function checkToken() {
     const token = localStorage.getItem("jwt");
+    consol.log(`chTokenbrforeIf ${token}`);
     if (token) {
+      consol.log(`chTokenAgterIf ${token}`);
       Auth.checkData(token)
         .then((res) => {
+          consol.log(`Auth.checkData ${res}`);
           if (res) {
             setEmail(res.email);
             setLoggedIn(true);
@@ -65,8 +68,10 @@ function App() {
       history.push("/");
       Promise.all([api.getUserInfo(), api.getInitialCards()])
         .then(([userData, cardsData]) => {
+          console.log(`promiseAll ${userData}`);
           setCurrentUser(userData);
           setCards(cardsData);
+          console.log(`Promise.all ${userData, cardsData}`)
         })
         .catch((err) => {
           console.log(err);
@@ -179,6 +184,7 @@ function App() {
         if (res.token) {
           setLoggedIn(true);
           localStorage.setItem("jwt", res.token);
+          console.log(`handleLogin ${res}`);
           checkToken();
           history.push("/");
         }
@@ -192,6 +198,7 @@ function App() {
 
   function handleLogOut() {
     setLoggedIn(false);
+    console.log(`handleLogOut ${jwt}`);
     localStorage.removeItem("jwt");
   }
 
