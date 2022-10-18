@@ -43,12 +43,9 @@ function App() {
 
   function checkToken() {
     const token = localStorage.getItem("jwt");
-    console.log(`chTokenbrforeIf ${token}`);
     if (token) {
-      console.log(`chTokenAgterIf ${token}`);
       Auth.checkData(token)
         .then((res) => {
-          console.log(`Auth.checkData ${res}`);
           if (res) {
             setEmail(res.email);
             setLoggedIn(true);
@@ -66,10 +63,8 @@ function App() {
       api.updateToken();
       Promise.all([api.getUserInfo(), api.getInitialCards()])
         .then(([userData, cardsData]) => {
-          console.log(`promiseAll ${userData}`);
           setCurrentUser(userData);
           setCards(cardsData);
-          console.log(`Promise.all ${userData, cardsData}`)
         })
         .catch((err) => {
           console.log(err);
@@ -182,7 +177,6 @@ function App() {
         if (res.token) {
           setLoggedIn(true);
           localStorage.setItem("jwt", res.token);
-          console.log(`handleLogin ${res}`);
           checkToken();
           history.push("/");
         }

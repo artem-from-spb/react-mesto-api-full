@@ -16,7 +16,7 @@ function Header(props) {
             <Link
               className="header__enter-link"
               onClick={props.onSignOut}
-              to="/sign-up"
+              to="/sign-in"
             >
               Выйти
             </Link>
