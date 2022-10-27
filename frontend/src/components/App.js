@@ -193,6 +193,20 @@ function App() {
     localStorage.removeItem("jwt");
   }
 
+  function handleMouseClickPopupClose() {
+    
+  const popup = document.querySelector('.popup');
+
+    popup.addEventListener("mousedown", (evt) => {
+      if (
+        evt.target === evt.currentTarget ||
+        evt.target.classList.contains("popup_opened")
+      ) {
+        closeAllPopups()
+      }
+    });
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div>
@@ -257,6 +271,7 @@ function App() {
           formName="null"
           btnText="Да"
           isOpen={false}
+          onClick={handleMouseClickPopupClose}
         ></PopupWithForm>
 
         {/* Обновить аватар */}

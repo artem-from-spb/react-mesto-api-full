@@ -9,13 +9,14 @@ function PopupWithForm({
   onClose,
   children,
   onSubmit,
+  onClick
 }) {
   const buttonClass = `popup__button-save ${
     name === "confirm" ? "popup__button-save_confirm" : ""
   }`;
 
   return (
-    <div className={`popup popup_${name} ${isOpen && "popup_opened"}`}>
+    <div className={`popup popup_${name} ${isOpen && "popup_opened"}`} onClick={onClick}>
       <div className="popup__container">
         <h2 className="popup__title">{title}</h2>
         <form
