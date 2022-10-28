@@ -77,6 +77,16 @@ function App() {
     checkToken();
   }, [history]);
 
+  useEffect(() => {
+    const close = (e) => {
+      if(e.keyCode === 27){
+        closeAllPopups();
+      }
+    }
+    window.addEventListener('keydown', close)
+  return () => window.removeEventListener('keydown', close)
+},[])
+
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
@@ -195,14 +205,14 @@ function App() {
 
   function handleMouseClickPopupClose() {
     
-  const popup = document.querySelector('.popup');
+  const popup = document.querySelector('.infoTooltip');
 
     popup.addEventListener("mousedown", (evt) => {
       if (
         evt.target === evt.currentTarget ||
-        evt.target.classList.contains("popup_opened")
+        evt.target.classList.contains("infoTooltip_opened")
       ) {
-        closeAllPopups()
+        setInfoTooltipOpen(false);
       }
     });
   }
@@ -217,6 +227,7 @@ function App() {
           onClose={closeAllPopups}
           image={infoTooltipImage}
           message={message}
+          onClick={handleMouseClickPopupClose}
         />
 
         <Switch>
@@ -271,7 +282,7 @@ function App() {
           formName="null"
           btnText="Да"
           isOpen={false}
-          onClick={handleMouseClickPopupClose}
+
         ></PopupWithForm>
 
         {/* Обновить аватар */}
